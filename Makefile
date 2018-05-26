@@ -1,12 +1,6 @@
-#
-#
 
+.PHONY: all
+all: lsstpipe.pdf
 
-TEX=$(*.tex)
-
-all: $(TEX)
-	latexmk  -bibtex -pdf -f lsstpipe.tex
-
-clean :
-	latexmk -c
-	rm lsstpipe.pdf
+lsstpipe.pdf: *.tex
+	latexmk -pdf -bibtex -f lsstpipe

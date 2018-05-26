@@ -1,0 +1,13 @@
+sudo: true
+dist: trusty
+os: linux
+language: cpp
+before_install:
+  - "sudo apt-get update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-latex-recommended texlive-generic-recommended latex-xcolor latexmk lmodern make texlive-publishers"
+matrix:
+  include:
+    - env: TEST="latex build"
+      script:
+        - make
+notifications:
+  email: false
